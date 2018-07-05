@@ -1,0 +1,100 @@
+.wrapper{
+  text-align: center;
+  :global(.ant-btn ~ .ant-btn){
+    margin-left: 10px;
+  }
+}
+.pannel{
+  $blockLen: 50px;
+  $borderWidth: 1px;
+  width: $blockLen * 9;
+  height: $blockLen * 9;
+  margin: 20px auto 10px !important;
+  .unit{
+    width: $blockLen;
+    height: $blockLen;
+    text-align: center;
+    line-height: $blockLen - 2;
+
+    background-color: #fff;
+    // border: $borderWidth solid #eee;
+
+    // &:nth-of-type(-n+6){
+    //   border-bottom: $borderWidth solid #eee;
+    // }
+    
+    // &:nth-of-type(3n+1), &:nth-of-type(3n+2){
+    //   border-right: $borderWidth solid #eee;
+    // }
+    border-color: #ddd;
+    border-style: solid;
+    border-width: $borderWidth 0 0 $borderWidth ;
+    
+    $boxBorderColor: #666;
+    &:nth-of-type(27n+1),
+    &:nth-of-type(27n+2),
+    &:nth-of-type(27n+3),
+    &:nth-of-type(27n+4),
+    &:nth-of-type(27n+5),
+    &:nth-of-type(27n+6),
+    &:nth-of-type(27n+7),
+    &:nth-of-type(27n+8),
+    &:nth-of-type(27n+9){
+      border-top-color: $boxBorderColor;
+    }
+    &:nth-of-type(9n+1), &:nth-of-type(9n+4), &:nth-of-type(9n+7){
+      border-left-color: $boxBorderColor;
+    }
+    &:nth-of-type(9n+9){
+      border-right: $borderWidth solid $boxBorderColor;
+    }
+    &:nth-last-of-type(-n+9){
+      border-bottom: $borderWidth solid $boxBorderColor;
+    }
+
+    &.hint{
+      background-color: #f6f6f6;
+      cursor: default;
+    }
+    &.err{
+      &:after{
+        box-shadow: 0px 0 1px red;
+      }
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      top: 1px;
+      bottom: 1px;
+      left: 1px;
+      right: 1px;
+      pointer-events: none;
+      // border: 2px solid #f00000;
+    }
+  }
+  // .box{
+  //   border: 0 solid #ccc;
+  //   border-left-width: $borderWidth;
+  //   border-top-width: $borderWidth;
+
+  //   // &:nth-of-type(3n+3){
+  //   //   border-right-width: $borderWidth;
+  //   // }
+  //   &:nth-of-type(n+7){
+  //     border-bottom-width: $borderWidth;
+  //   }
+  // }
+
+  .inputer{
+    // line-height: $blockLen - 2;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border: 0;
+    background-color: transparent;
+    &:focus{
+      outline: none;
+      box-shadow: none;
+    }
+  }
+}
