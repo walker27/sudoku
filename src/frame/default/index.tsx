@@ -11,10 +11,10 @@ class Frame extends React.Component<FrameProps, {}> {
     return (
       <Layout style={{ height: '100%' }}>
         <Content style={{ padding: 0, height: '100%' }}>
-          <Route exact={true} path="/" render={() => <Redirect to="/sudoku" />} />
+          <Route exact={true} path="/" render={() => <Redirect to="/" />} />
           <Switch>
-            <Route path="/sudoku" component={View_Sudoku} />
-            <Redirect from="*" to="/sudoku" />
+            <Route path="/" component={View_Sudoku} />
+            <Redirect from="*" to="/" />
           </Switch>
         </Content>
       </Layout>
